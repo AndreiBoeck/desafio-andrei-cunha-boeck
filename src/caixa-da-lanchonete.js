@@ -78,3 +78,5 @@ class CaixaDaLanchonete {
         return valueItens;
     }
 }
+
+export { CaixaDaLanchonete };
