@@ -1,4 +1,16 @@
 class CaixaDaLanchonete {
+
+    /*
+    ============================================
+    ============Andrei Cunha Boeck==============
+    =========andrei.boeck@edu.pucrs.br==========
+    ============================================
+    */
+
+
+
+
+
     calcularValorDaCompra(metodoDePagamento, itens) {
         
         let valorTotal = (this.selectItens(itens)); // Fixed: Call selectItens using 'this'
