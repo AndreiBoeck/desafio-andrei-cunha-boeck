@@ -1,25 +1,26 @@
 class CaixaDaLanchonete {
     calcularValorDaCompra(metodoDePagamento, itens) {
+        
         let valorTotal = (this.selectItens(itens)); // Fixed: Call selectItens using 'this'
         
         if (typeof valorTotal === 'string') {
             return valorTotal; // Return error messages directly
         }
-        else{
-            switch (metodoDePagamento) {
-                case 'dinheiro':
-                    valorTotal -= valorTotal * 0.05;
-                    break;
-                case 'credito':
-                    valorTotal += valorTotal * 0.03;
-                    break;
-                case 'debito':
-                    break;
-                default:
-                    return 'Forma de pagamento inválida!';
+        
+        switch (metodoDePagamento) {    // Apply discounts and corrections based on the payment method
+            case 'dinheiro':
+                valorTotal -= valorTotal * 0.05;
+                break;
+            case 'credito':
+                valorTotal += valorTotal * 0.03;
+                break;
+            case 'debito':
+                break;
+            default:
+                return 'Forma de pagamento inválida!'; // Error Message
             }
-        }
-        const finalReturn = "R$ " + valorTotal.toFixed(2);
+        
+        const finalReturn = "R$ " + valorTotal.toFixed(2); // rounding and decimal spaces
 
         return finalReturn.replace('.', ',');
     }
@@ -39,14 +40,14 @@ class CaixaDaLanchonete {
         }
 
         for (let i = 0; i < itens.length; i++) {
-            if (itens[i].slice(-1) == 0) {
+            if (itens[i].slice(-1) == 0) {      //dettect ilegal quantity and return error
                 return 'Quantidade inválida!';
             }
 
-            let itemName = itens[i].slice(0, -2); // Extract item name
+            let itemName = (itens[i].split(" ").join("")).slice(0, -2); // Extract item name and standardizes itens
             let itemQuantity = parseInt(itens[i].slice(-1)); // Extract item quantity
 
-            switch (itemName) {
+            switch (itemName) {     //Select prices by label
                 case 'cafe':
                     valueItens += 3.00 * itemQuantity; 
                     break;
