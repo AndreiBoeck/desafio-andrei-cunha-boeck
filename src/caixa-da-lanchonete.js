@@ -1,6 +1,6 @@
 class CaixaDaLanchonete {
     calcularValorDaCompra(metodoDePagamento, itens) {
-        var valorTotal = this.selectItens(itens); // Fixed: Call selectItens using 'this'
+        let valorTotal = (this.selectItens(itens)); // Fixed: Call selectItens using 'this'
         
         if (typeof valorTotal === 'string') {
             return valorTotal; // Return error messages directly
@@ -19,20 +19,22 @@ class CaixaDaLanchonete {
                     return 'Forma de pagamento inválida!';
             }
         }
-        return [metodoDePagamento, itens, valorTotal];
+        const finalReturn = "R$ " + valorTotal.toFixed(2);
+
+        return finalReturn.replace('.', ',');
     }
 
     selectItens(itens) {
         var valueItens = 0;
         var validate = new Array();
 
-        if (itens.length === 0) {
+        if (itens.length == 0) {
             return 'Não há itens no carrinho de compra!';
         }
 
         for (let i = 0; i < itens.length; i++) {
-            if(itens[i].slice(0, -2) === 'cafe' || itens[i].slice(0, -2) === 'sanduiche') {
-                validate.push(itens.slice(0, -2));
+            if(itens[i].slice(0, -2) == 'cafe' || itens[i].slice(0, -2) == 'sanduiche') {
+                validate.push(itens[i].slice(0, -2));
             }
         }
 
@@ -41,15 +43,15 @@ class CaixaDaLanchonete {
                 return 'Quantidade inválida!';
             }
 
-            const itemName = itens[i].slice(0, -2); // Extract item name
-            const itemQuantity = parseInt(itens[i].slice(-1)); // Extract item quantity
+            let itemName = itens[i].slice(0, -2); // Extract item name
+            let itemQuantity = parseInt(itens[i].slice(-1)); // Extract item quantity
 
             switch (itemName) {
                 case 'cafe':
                     valueItens += 3.00 * itemQuantity; 
                     break;
                 case 'chantily':
-                    if (validate.includes('cafe')) {
+                    if (validate.includes("cafe")) {
                         valueItens += 1.50 * itemQuantity; 
                     } else {
                         return 'Item extra não pode ser pedido sem o principal';
@@ -62,7 +64,7 @@ class CaixaDaLanchonete {
                     valueItens += 6.50 * itemQuantity; 
                     break;
                 case 'queijo':
-                    if (validate.includes('sanduiche')) {
+                    if (validate.includes("sanduiche")) {
                         valueItens += 2.00 * itemQuantity; 
                     } else {
                         return 'Item extra não pode ser pedido sem o principal';

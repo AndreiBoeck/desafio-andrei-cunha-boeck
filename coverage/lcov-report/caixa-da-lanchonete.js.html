@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.55% </span>
+                <span class="strong">87.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>77/90</span>
+                <span class='fraction'>80/91</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.96% </span>
+                <span class="strong">78.12% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/31</span>
+                <span class='fraction'>25/32</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.55% </span>
+                <span class="strong">87.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>77/90</span>
+                <span class='fraction'>80/91</span>
             </div>
         
             
@@ -152,30 +152,32 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">19x</span>
@@ -218,11 +220,11 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -236,14 +238,14 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">class CaixaDaLanchonete {
     calcularValorDaCompra(metodoDePagamento, itens) {
-        var valorTotal = this.selectItens(itens); // Fixed: Call selectItens using 'this'
+        let valorTotal = (this.selectItens(itens)); // Fixed: Call selectItens using 'this'
         
         if (typeof valorTotal === 'string') {
             return valorTotal; // Return error messages directly
@@ -262,21 +264,22 @@
 <span class="cstat-no" title="statement not covered" >                    return 'Forma de pagamento inválida!';</span>
             }
         }
-        printf("%s %s %s",metodoDePagamento, itens, valorTotal);
-        return [metodoDePagamento, itens, valorTotal];
+        const finalReturn = "R$ " + valorTotal.toFixed(2);
+&nbsp;
+        return finalReturn.replace('.', ',');
     }
 &nbsp;
     selectItens(itens) {
         var valueItens = 0;
         var validate = new Array();
 &nbsp;
-        if (itens.length === 0) {
+        if (itens.length == 0) {
             return 'Não há itens no carrinho de compra!';
         }
 &nbsp;
         for (let i = 0; i &lt; itens.length; i++) {
-            if(itens[i].slice(0, -2) === 'cafe' || itens[i].slice(0, -2) === 'sanduiche') {
-                validate.push(itens.slice(0, -2));
+            if(itens[i].slice(0, -2) == 'cafe' || itens[i].slice(0, -2) == 'sanduiche') {
+                validate.push(itens[i].slice(0, -2));
             }
         }
 &nbsp;
@@ -285,15 +288,15 @@
                 return 'Quantidade inválida!';
             }
 &nbsp;
-            const itemName = itens[i].slice(0, -2); // Extract item name
-            const itemQuantity = parseInt(itens[i].slice(-1)); // Extract item quantity
+            let itemName = itens[i].slice(0, -2); // Extract item name
+            let itemQuantity = parseInt(itens[i].slice(-1)); // Extract item quantity
 &nbsp;
             switch (itemName) {
                 case 'cafe':
                     valueItens += 3.00 * itemQuantity; 
                     break;
                 case 'chantily':
-                    if (validate.includes('cafe')) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+                    if (validate.includes("cafe")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                        valueItens += 1.50 * itemQuantity; </span>
                     } else {
                         return 'Item extra não pode ser pedido sem o principal';
@@ -306,12 +309,12 @@
                     valueItens += 6.50 * itemQuantity; 
                     break;
                 case 'queijo':
-                    if (validate.includes('sanduiche')) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >                        valueItens += 2.00 * itemQuantity; </span>
+                    if (validate.includes("sanduiche")) {
+                        valueItens += 2.00 * itemQuantity; 
                     } else {
                         return 'Item extra não pode ser pedido sem o principal';
-<span class="branch-0 cbranch-no" title="branch not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+                    }
+                    break;
 <span class="branch-0 cbranch-no" title="branch not covered" >                case 'salgado':</span>
 <span class="cstat-no" title="statement not covered" >                    valueItens += 7.25 * itemQuantity; </span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
@@ -337,7 +340,7 @@ export { CaixaDaLanchonete };</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-14T02:15:51.837Z
+                at 2023-08-14T14:37:58.353Z
             </div>
         <script src="prettify.js"></script>
         <script>
