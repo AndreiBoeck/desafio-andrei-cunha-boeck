@@ -36,7 +36,7 @@ class CaixaDaLanchonete {
 
         for (let i = 0; i < itens.length; i++) {
             let comma = itens[i].indexOf(",");
-            if(itens[i].slice(0, (comma * -1)) == 'cafe' || itens[i].slice(0, comma) == 'sanduiche') {
+            if(itens[i].slice(0, comma) == 'cafe' || itens[i].slice(0, comma) == 'sanduiche') {
                 validate.push(itens[i].slice(0, comma));
             }
         }
