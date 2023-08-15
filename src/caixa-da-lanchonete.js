@@ -1,16 +1,4 @@
 class CaixaDaLanchonete {
-
-    /*
-    ============================================
-    ============Andrei Cunha Boeck==============
-    =========andrei.boeck@edu.pucrs.br==========
-    ============================================
-    */
-
-
-
-
-
     calcularValorDaCompra(metodoDePagamento, itens) {
         
         let valorTotal = (this.selectItens(itens)); // Fixed: Call selectItens using 'this'
@@ -46,18 +34,20 @@ class CaixaDaLanchonete {
         }
 
         for (let i = 0; i < itens.length; i++) {
-            if(itens[i].slice(0, -2) == 'cafe' || itens[i].slice(0, -2) == 'sanduiche') {
-                validate.push(itens[i].slice(0, -2));
+            let comma = itens[i].indexOf(",");
+            if(itens[i].slice(0, comma) == 'cafe' || itens[i].slice(0, comma) == 'sanduiche') {
+                validate.push(itens[i].slice(0, comma));
             }
         }
 
         for (let i = 0; i < itens.length; i++) {
-            if (itens[i].slice(-1) == 0) {      //dettect ilegal quantity and return error
+            let comma = itens[i].indexOf(",");
+            if (itens[i].slice(comma + 1) == 0) {      //dettect ilegal quantity and return error
                 return 'Quantidade inválida!';
             }
 
-            let itemName = (itens[i].split(" ").join("")).slice(0, -2); // Extract item name and standardizes itens
-            let itemQuantity = parseInt(itens[i].slice(-1)); // Extract item quantity
+            let itemName = (itens[i].split(" ").join("")).slice(0, comma); // Extract item name and standardizes itens
+            let itemQuantity = parseInt(itens[i].slice(comma + 1)); // Extract item quantity
 
             switch (itemName) {     //Select prices by label
                 case 'cafe':
