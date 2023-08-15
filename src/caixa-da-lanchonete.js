@@ -76,10 +76,10 @@ class CaixaDaLanchonete {
                 case 'salgado':
                     valueItens += 7.25 * itemQuantity; 
                     break;
-                case 'combo 1':
+                case 'combo1':
                     valueItens += 9.50 * itemQuantity; 
                     break;
-                case 'combo 2':
+                case 'combo2':
                     valueItens += 7.50 * itemQuantity; 
                     break;
                 default:
